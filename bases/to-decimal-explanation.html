@@ -1,3 +1,27 @@
+<p>
+  The right-most digit has a place value of one.
+  Every other digit has a place value <span data-bind="text: base"></span> times the digit to its right.
+</p>
+
+<table>
+  <tr>
+    <th>Original digits</th>
+    <!-- ko foreach: digits -->
+      <td data-bind="text: original"></td>
+    <!-- /ko -->
+  </tr>
+  <tr>
+    <th>Place value</th>
+    <!-- ko foreach: digits -->
+      <td data-bind="text: placeValue"></td>
+    <!-- /ko -->
+  </tr>
+</table>
+
+<p>
+  We then find the product of each digit with its place value.
+</p>
+
 <table>
   <tr>
     <th>Original digits</th>

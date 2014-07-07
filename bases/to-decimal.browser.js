@@ -83,6 +83,7 @@ var explanationWidget = knockoutWidgets.create({
         }
         
         return {
+            base: base,
             digits: digits.map(digitViewModel),
             answer: answer
         };
