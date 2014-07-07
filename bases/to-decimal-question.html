@@ -6,5 +6,8 @@
 <p>Number in base <span data-bind="text: base"></span>: <span data-bind="text: number"></span></p>
 
 <form data-bind="submit: submitAnswer">
-  <p>Number in base 10: <input type="text" data-bind="value: submittedAnswer" /> <input type="submit" value="Check answer" /></p>
+  <p>
+    Number in base 10: <input type="text" data-bind="value: submittedAnswer" />
+    <input class="primary-action" type="submit" value="Check answer" />
+  </p>
 </form>
