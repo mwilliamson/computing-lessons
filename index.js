@@ -1,3 +1,5 @@
 module.exports = {
-    lessons: []
+    lessons: [
+        __dirname + "/bases/to-decimal.js"
+    ]
 };
