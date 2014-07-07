@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Original digits</th>
+    <!-- ko foreach: digits -->
+      <td data-bind="text: original"></td>
+    <!-- /ko -->
+  </tr>
+  <tr>
+    <th>Place value</th>
+    <!-- ko foreach: digits -->
+      <td data-bind="text: placeValue"></td>
+    <!-- /ko -->
+  </tr>
+  <tr>
+    <th>Product</th>
+    <!-- ko foreach: digits -->
+      <td data-bind="text: product"></td>
+    <!-- /ko -->
+  </tr>
+</table>
+
+<p>The sum of the products gives the answer <strong data-bind="text: answer"></strong></p>

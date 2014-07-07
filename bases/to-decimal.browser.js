@@ -21,15 +21,14 @@ module.exports = {
             return digit * Math.pow(base, digits.length - index - 1);
         }));
         
-        var explanationWidget = function() {
-        };
-        
         return withOptions(questionWithExplanation, {
             onAnswer: onAnswer,
             questionWidget: withOptions(questionWidget, {
                 base: base, number: number, answer: answer
             }),
-            explanationWidget: explanationWidget
+            explanationWidget: withOptions(explanationWidget, {
+                base: base, digits: digits, answer: answer
+            })
         });
     }
 };
@@ -62,6 +61,30 @@ var questionWidget = knockoutWidgets.create({
             number: number,
             submittedAnswer: submittedAnswer,
             submitAnswer: submitAnswer
+        };
+    }
+});
+
+
+var explanationWidget = knockoutWidgets.create({
+    template: fs.readFileSync(__dirname + "/to-decimal-explanation.html", "utf8"),
+    init: function(options) {
+        var base = options.base;
+        var digits = options.digits;
+        var answer = options.answer;
+        
+        function digitViewModel(originalDigit, index) {
+            var placeValue = Math.pow(base, digits.length - index - 1);
+            return {
+                original: originalDigit,
+                placeValue: placeValue,
+                product: originalDigit * placeValue
+            };
+        }
+        
+        return {
+            digits: digits.map(digitViewModel),
+            answer: answer
         };
     }
 });
