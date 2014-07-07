@@ -1,0 +1,21 @@
+{
+  "name": "computing-lessons",
+  "version": "0.0.0",
+  "description": "Interactive lessons to learn Computing",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mwilliamson/computing-lessons.git"
+  },
+  "scripts": {
+    "build-static": "node node_modules/lesson-server/lib/static.js index.js _build"
+  },
+  "author": "Michael Williamson <mike@zwobble.org>",
+  "license": "BSD 2-Clause",
+  "bugs": {
+    "url": "https://github.com/mwilliamson/computing-lessons/issues"
+  },
+  "homepage": "https://github.com/mwilliamson/computing-lessons",
+  "dependencies": {
+    "lesson-server": "git+ssh://git@github.com:mwilliamson/lesson-server.git"
+  }
+}
